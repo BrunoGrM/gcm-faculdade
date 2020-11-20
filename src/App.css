@@ -3,3 +3,12 @@ fieldset {
   color: yellowgreen;
   padding-top: 40px;
 }
+h1 {
+  text-align: center;
+  color: darkkhaki;
+}
+
+h3 {
+  text-align: left;
+  color: darkkhaki;
+}

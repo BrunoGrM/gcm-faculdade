@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './App.css'
 
 const App = () => {
@@ -34,10 +34,12 @@ const App = () => {
             periodo: '9º'
         }
     ]
-
+    const [alunos, setAlunos] = useState(matriculados)
     return (
         <>
-        {matriculados.map((aluno, index) => (
+        <h1>Alunos:</h1>
+            <h3 onClick={() => setAlunos(matriculados)} style={{cursor:'pointer'}}>Resetar</h3>
+        {alunos.map((aluno, index) => (
             <fieldset>
                 <div key={index}>
                     <label>Id: {aluno.id}</label><br />
