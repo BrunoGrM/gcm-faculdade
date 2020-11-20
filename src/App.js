@@ -35,8 +35,52 @@ const App = () => {
         }
     ]
     const [alunos, setAlunos] = useState(matriculados)
+    const [nome, setNome] = useState('')
+    const [curso, setCurso] = useState('')
+    const [periodo, setPeriodo] = useState('')
+    
+    const adicionarAluno = () => {
+        const newAluno = {
+            id: alunos.length + 1,
+            nome,
+            curso,
+            periodo
+        }
+        setAlunos([...alunos, newAluno])
+        setNome('')
+        setCurso('')
+        setPeriodo('')
+    }
     return (
         <>
+        <form>
+            <input 
+                type="text" 
+                name="nome" 
+                value={nome} 
+                required 
+                onChange={e => setNome(e.target.value)} 
+                placeholder="Nome" 
+            />
+            <input 
+                type="text" 
+                name="curso" 
+                value={curso} 
+                required 
+                onChange={e => setCurso(e.target.value)} 
+                placeholder="Curso"
+            />
+            <input 
+                type="text" 
+                name="periodo" 
+                value={periodo} 
+                required 
+                onChange={e => setPeriodo(e.target.value)} 
+                placeholder="Período"
+            />
+            <button onClick={adicionarAluno} type='button'> Adicionar </button>
+        </form>
+
         <h1>Alunos:</h1>
             <h3 onClick={() => setAlunos(matriculados)} style={{cursor:'pointer'}}>Resetar</h3>
         {alunos.map((aluno, index) => (
