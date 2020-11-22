@@ -38,6 +38,14 @@ const App = () => {
     const [nome, setNome] = useState('')
     const [curso, setCurso] = useState('')
     const [periodo, setPeriodo] = useState('')
+    const [textoBotao, setTextoBotao] = useState('Adicionar')
+
+    const editarAluno = (aluno) => {
+        setTextoBotao('Editar')
+        setNome(aluno.nome)
+        setCurso(aluno.curso)
+        setPeriodo(aluno.periodo)
+    }
     
     const adicionarAluno = () => {
         const newAluno = {
@@ -50,6 +58,7 @@ const App = () => {
         setNome('')
         setCurso('')
         setPeriodo('')
+        setTextoBotao('Adicionar')
     }
     return (
         <>
@@ -78,7 +87,7 @@ const App = () => {
                 onChange={e => setPeriodo(e.target.value)} 
                 placeholder="Período"
             />
-            <button onClick={adicionarAluno} type='button'> Adicionar </button>
+            <button onClick={adicionarAluno} type='button'> {textoBotao} </button>
         </form>
 
         <h1>Alunos:</h1>
@@ -90,6 +99,7 @@ const App = () => {
                     <label>Nome: {aluno.nome}</label><br />
                     <label>Curso: {aluno.curso}</label><br />
                     <label>Período: {aluno.periodo}</label><br/>
+                    <label onClick={() => editarAluno(aluno)} className="editar">- Editar</label><br/>
                 </div>
             </fieldset>
         ))}
