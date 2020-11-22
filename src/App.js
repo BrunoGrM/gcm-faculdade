@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './App.css'
+import Button from './components/Button/Button'
 
 const App = () => {
     const matriculados = [
@@ -92,7 +93,7 @@ const App = () => {
                 onChange={e => setPeriodo(e.target.value)} 
                 placeholder="Período"
             />
-            <button onClick={adicionarAluno} type='button'> {textoBotao} </button>
+            <Button onClick={adicionarAluno} text={textoBotao} type='button' />
         </form>
 
         <h1>Alunos:</h1>
