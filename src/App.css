@@ -12,3 +12,9 @@ h3 {
   text-align: left;
   color: darkkhaki;
 }
+
+.editar {
+  color: cyan;
+  float: right;
+  cursor: pointer;
+}

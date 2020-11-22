@@ -46,6 +46,11 @@ const App = () => {
         setCurso(aluno.curso)
         setPeriodo(aluno.periodo)
     }
+
+    const deletarAluno = (id) => {
+        const listaFiltrada = alunos.filter(aluno => aluno.id !== id)
+        setAlunos(listaFiltrada)
+    }
     
     const adicionarAluno = () => {
         const newAluno = {
@@ -100,6 +105,7 @@ const App = () => {
                     <label>Curso: {aluno.curso}</label><br />
                     <label>Período: {aluno.periodo}</label><br/>
                     <label onClick={() => editarAluno(aluno)} className="editar">- Editar</label><br/>
+                    <label onClick={() => deletarAluno(aluno.id)} style={{color:'#c21d1d', float:'right', cursor:'pointer'}}>X Deletar</label>
                 </div>
             </fieldset>
         ))}
