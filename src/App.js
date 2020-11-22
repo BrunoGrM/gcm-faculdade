@@ -98,15 +98,17 @@ const App = () => {
         <h1>Alunos:</h1>
             <h3 onClick={() => setAlunos(matriculados)} style={{cursor:'pointer'}}>Resetar</h3>
         {alunos.map((aluno, index) => (
-            <fieldset>
-                <div key={index}>
-                    <label>Id: {aluno.id}</label><br />
-                    <label>Nome: {aluno.nome}</label><br />
-                    <label>Curso: {aluno.curso}</label><br />
-                    <label>Período: {aluno.periodo}</label><br/>
-                    <label onClick={() => editarAluno(aluno)} className="editar">- Editar</label><br/>
-                    <label onClick={() => deletarAluno(aluno.id)} style={{color:'#c21d1d', float:'right', cursor:'pointer'}}>X Deletar</label>
+            <fieldset key={index}>
+                <div className="container-aluno">
+                    <div>
+                        <label>Id: {aluno.id}</label><br />
+                        <label>Nome: {aluno.nome}</label><br />
+                        <label>Curso: {aluno.curso}</label><br />
+                        <label>Período: {aluno.periodo}</label><br/>
+                    </div>
                 </div>
+                <label onClick={() => editarAluno(aluno)} className="editar">- Editar</label><br/>
+                <label onClick={() => deletarAluno(aluno.id)} style={{color:'#c21d1d', float:'right', cursor:'pointer'}}>X Deletar</label>
             </fieldset>
         ))}
         </>

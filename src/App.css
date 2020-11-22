@@ -18,3 +18,9 @@ h3 {
   float: right;
   cursor: pointer;
 }
+
+.container-aluno {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
