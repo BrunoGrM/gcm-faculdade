@@ -1,0 +1,10 @@
+.default-custom-button {
+    border: 0px;
+    height: 40px;
+    border-radius: 7px;
+    font-size: large;
+    padding-right: 35px;
+    padding-left: 35px;
+    background: #a2d450;
+    cursor: pointer;
+  }

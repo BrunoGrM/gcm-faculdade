@@ -1,0 +1,26 @@
+fieldset {
+  min-width: 680px;
+  color: yellowgreen;
+  padding-top: 40px;
+}
+h1 {
+  text-align: center;
+  color: darkkhaki;
+}
+
+h3 {
+  text-align: left;
+  color: darkkhaki;
+}
+
+.editar {
+  color: cyan;
+  float: right;
+  cursor: pointer;
+}
+
+.container-aluno {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
