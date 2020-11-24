@@ -3,6 +3,7 @@ import './App.css'
 import Button from './components/Button/Button'
 import Input from './components/Input/Input'
 import Form from './components/Form/Form'
+import Switch from './components/Switch/Switch';
 
 const App = () => {
     const matriculados = [
@@ -42,6 +43,7 @@ const App = () => {
     const [curso, setCurso] = useState('')
     const [periodo, setPeriodo] = useState('')
     const [textoBotao, setTextoBotao] = useState('Adicionar')
+    const [isDarkMode, setIsDarkMode] = useState(false);
 
     const editarAluno = (aluno) => {
         setTextoBotao('Editar')
@@ -67,9 +69,13 @@ const App = () => {
         setCurso('')
         setPeriodo('')
         setTextoBotao('Adicionar')
-    }
-    return (
-        <>
+        }
+        return (
+        <div className={isDarkMode ? 'dark-mode' : 'light-mode'}>
+        <div className="container-mode">
+            <label>{isDarkMode ? 'Dark' : 'Light'} Mode</label>
+            <Switch onChange={e => setIsDarkMode(e.target.checked)} text="mode" />
+        </div>
         <Form>
             <Input 
                 type="text" 
@@ -114,7 +120,7 @@ const App = () => {
                 <label onClick={() => deletarAluno(aluno.id)} style={{color:'#c21d1d', float:'right', cursor:'pointer'}}>X Deletar</label>
             </fieldset>
         ))}
-        </>
+        </div>
     )
 }
 
