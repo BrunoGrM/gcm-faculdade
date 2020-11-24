@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './App.css'
 import Button from './components/Button/Button'
+import Input from './components/Input/Input'
 
 const App = () => {
     const matriculados = [
@@ -69,7 +70,7 @@ const App = () => {
     return (
         <>
         <form>
-            <input 
+            <Input 
                 type="text" 
                 name="nome" 
                 value={nome} 
@@ -77,7 +78,7 @@ const App = () => {
                 onChange={e => setNome(e.target.value)} 
                 placeholder="Nome" 
             />
-            <input 
+            <Input 
                 type="text" 
                 name="curso" 
                 value={curso} 
@@ -85,7 +86,7 @@ const App = () => {
                 onChange={e => setCurso(e.target.value)} 
                 placeholder="Curso"
             />
-            <input 
+            <Input 
                 type="text" 
                 name="periodo" 
                 value={periodo} 
