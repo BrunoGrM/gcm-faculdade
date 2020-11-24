@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './App.css'
 import Button from './components/Button/Button'
 import Input from './components/Input/Input'
+import Form from './components/Form/Form'
 
 const App = () => {
     const matriculados = [
@@ -69,7 +70,7 @@ const App = () => {
     }
     return (
         <>
-        <form>
+        <Form>
             <Input 
                 type="text" 
                 name="nome" 
@@ -95,7 +96,7 @@ const App = () => {
                 placeholder="Período"
             />
             <Button onClick={adicionarAluno} text={textoBotao} type='button' />
-        </form>
+        </Form>
 
         <h1>Alunos:</h1>
             <h3 onClick={() => setAlunos(matriculados)} style={{cursor:'pointer'}}>Resetar</h3>
