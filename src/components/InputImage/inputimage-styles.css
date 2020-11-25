@@ -1,0 +1,11 @@
+input[type='file'] {
+    display: none
+}
+
+.label-file {
+    border-radius: 5px;
+    border: 1px dashed black;
+    cursor: pointer;
+    padding: 15px;
+    font-size: 15px;
+}
