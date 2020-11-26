@@ -29,7 +29,6 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh 'surge ./build https://gcmfaculdade.surge.sh/ --token eda4886e106c5442a915eb912b2ea59a'
-                input message: 'Finished deploy to surge!'
             }
         }
     }
