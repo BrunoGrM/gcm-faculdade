@@ -1,0 +1,29 @@
+pipeline {
+    agent {
+        docker {
+            image 'node:6-alpine'
+            args '-p 3000:3000'
+        }
+    }
+    environment {
+        CI = 'true'
+    }
+    stages {
+        stage('Build') {
+            steps {
+                sh 'npm install'
+            }
+        }
+        stage('Install Surge') {
+            steps {
+                sh 'npm install -g surge'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'surge ./build https://gcm-faculdade.surge.sh/ --token eda4886e106c5442a915eb912b2ea59a'
+                input message: 'Finished deploy to surge!'
+            }
+        }
+    }
+}
